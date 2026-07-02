@@ -1,0 +1,26 @@
+CS 3110: Advanced Programming
+Fall Semester 2026 - Syllabus
+
+Course Description:
+CS 3110 is the third course in the programming sequence for computer science majors.
+It covers functional programming concepts, compiler designs, data structures, and multi-threaded systems.
+The language of instruction is OCaml.
+
+Grading Policy:
+- Assignments: 40% (4 major coding projects)
+- Midterm Exam: 25% (In-class, covers modules 1 to 5)
+- Final Exam: 30% (Comprehensive)
+- Participation & Quizzes: 5%
+
+Academic Integrity:
+All work submitted must be your own. Collaborations are limited to high-level conceptual discussions.
+Plagiarism, code sharing, or posting solutions online is strictly prohibited and will result in a zero grade.
+
+Office Hours:
+Professor Clarkson: Tuesdays 2:00 PM - 3:30 PM, Gates Hall 341.
+TAs: Daily 4:00 PM - 6:00 PM, Gates Hall lobby.
+
+Assignment 3: Functional Interpreter
+- Due Date: Next Friday at 11:59 PM.
+- Description: Write a parser and interpreter for a subset of OCaml, focusing on variable bindings and function applications.
+- Late Submission: Late assignments are accepted up to 48 hours with a penalty of 10% per day.

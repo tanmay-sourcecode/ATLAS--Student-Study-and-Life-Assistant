@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "title": "CS 3110: Advanced Programming Lecture",
+        "start": "2026-07-03T10:00:00.340867",
+        "end": "2026-07-03T11:30:00.340867",
+        "description": "Weekly lecture on functional programming concepts."
+    },
+    {
+        "id": "2",
+        "title": "MATH 2940: Linear Algebra Recitation",
+        "start": "2026-07-04T14:00:00.340867",
+        "end": "2026-07-04T15:00:00.340867",
+        "description": "Vector spaces and eigenvalues practice."
+    },
+    {
+        "id": "3",
+        "title": "CS 3110: Office Hours",
+        "start": "2026-07-05T16:00:00.340867",
+        "end": "2026-07-05T17:00:00.340867",
+        "description": "Consulting with TAs about Assignment 3."
+    }
+]

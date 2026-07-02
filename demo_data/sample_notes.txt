@@ -1,0 +1,27 @@
+CS 3110: Lecture 7 Notes
+Functional Programming Concepts & Recursion
+
+Overview:
+In this lecture, we discussed why functional programming is useful. By avoiding shared mutable state,
+functional programs are easier to reason about, simpler to parallelize, and less prone to side-effect bugs.
+
+Key Concepts:
+1. First-Class Functions: Functions are treated as values, meaning they can be passed as arguments,
+   returned from other functions, and stored in variables.
+2. Immutability: Once a variable or binding is created, its value cannot be changed. This eliminates
+   side-effects.
+3. Tail Recursion: A recursive function where the recursive call is the final action in the function.
+   Tail-recursive functions can be optimized by the compiler to run in constant stack space, preventing
+   stack overflow.
+
+Example of Tail-Recursive Factorial in OCaml:
+let rec fact_helper n acc =
+  if n <= 1 then acc
+  else fact_helper (n - 1) (n * acc)
+
+let fact n = fact_helper n 1
+
+Exam Review Topics:
+- Know the difference between tail recursion and normal recursion.
+- Understand lexical scope vs dynamic scope.
+- Be ready to write map, filter, and fold functions.

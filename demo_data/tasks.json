@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "CS 3110: Assignment 3 (Functional Interpreter)",
+        "deadline": "2026-07-06T23:59:00.342137",
+        "priority": "High",
+        "status": "Todo",
+        "description": "Write a parser and interpreter for a subset of OCaml."
+    },
+    {
+        "id": "2",
+        "title": "MATH 2940: Homework 5",
+        "deadline": "2026-07-07T12:00:00.342137",
+        "priority": "Medium",
+        "status": "Todo",
+        "description": "Complete exercises 4.1 to 4.5 in textbook."
+    },
+    {
+        "id": "3",
+        "title": "CS 3110: Midterm Prep Quiz",
+        "deadline": "2026-07-04T23:59:00.342137",
+        "priority": "High",
+        "status": "Completed",
+        "description": "Online practice quiz covering first 4 modules."
+    }
+]
