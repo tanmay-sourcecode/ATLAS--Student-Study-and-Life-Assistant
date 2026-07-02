@@ -1,0 +1,19 @@
+# Agent Framework & LLM
+google-adk
+anthropic
+python-dotenv
+
+# RAG & Tools (Vector search and document parsing)
+chromadb
+openai
+pypdf
+ticker
+
+# MCP Server
+mcp
+ 
+# Testing & Utilities
+pytest
+pydantic
+
+dotenv

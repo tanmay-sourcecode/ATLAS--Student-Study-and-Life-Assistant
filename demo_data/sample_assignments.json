@@ -1,0 +1,26 @@
+[
+    {
+        "course": "CS 3110",
+        "title": "Assignment 3: Functional Interpreter",
+        "deadline": "2026-07-10T23:59:00",
+        "priority": "High",
+        "estimated_hours": 12,
+        "description": "Implement an AST parser and evaluator in OCaml for a functional programming language."
+    },
+    {
+        "course": "MATH 2940",
+        "title": "Homework 5: Orthogonality",
+        "deadline": "2026-07-08T12:00:00",
+        "priority": "Medium",
+        "estimated_hours": 4,
+        "description": "Practice problems on inner product spaces and Gram-Schmidt orthogonalization."
+    },
+    {
+        "course": "CS 3110",
+        "title": "Midterm Exam 1",
+        "deadline": "2026-07-15T10:00:00",
+        "priority": "High",
+        "estimated_hours": 15,
+        "description": "Written exam covering functional programming, tail recursion, algebraic data types, and semantics."
+    }
+]
