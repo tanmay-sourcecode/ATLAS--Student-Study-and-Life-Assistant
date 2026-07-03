@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Check for API keys
-if not os.getenv("ANTHROPIC_API_KEY") and not os.getenv("GEMINI_API_KEY") and not os.getenv("GOOGLE_API_KEY"):
-    print("⚠️ WARNING: No ANTHROPIC_API_KEY or GEMINI_API_KEY/GOOGLE_API_KEY found in environment variables.")
+if not os.getenv("ANTHROPIC_API_KEY") and not os.getenv("GEMINI_API_KEY"):
+    print("⚠️ WARNING: No ANTHROPIC_API_KEY or GEMINI_API_KEY found in environment variables.")
     print("Please set one of these keys in your .env file or local environment so the LLM can run.\n")
 
 try:
