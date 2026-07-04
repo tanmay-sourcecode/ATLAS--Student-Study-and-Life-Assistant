@@ -65,7 +65,7 @@ BANNER = r"""
  / ___ | / /    / /___   / ___ | ___/ / 
 /_/  |_|/_/    /_____/  /_/  |_|/____/  
                                         
-   Your AI Student Chief of Staff - Multi-Agent Study & Life Assistant
+   Your Student Study & Life Assistant - Multi-Agent Study & Life Assistant
    Built on Google Agent Development Kit (ADK) & Google Antigravity
 ========================================================================
 """
@@ -90,14 +90,14 @@ async def chat_loop():
     print_help()
     
     # Initialize InMemoryRunner
-    runner = InMemoryRunner(agent=orchestrator_agent, app_name="atlas-chief-of-staff")
+    runner = InMemoryRunner(agent=orchestrator_agent, app_name="atlas-student-study-and-life-assistant")
     
     user_id = "student_1"
     
     # Create the session before handling chat turns
     try:
         session = await runner.session_service.create_session(
-            app_name="atlas-chief-of-staff",
+            app_name="atlas-student-study-and-life-assistant",
             user_id=user_id
         )
         session_id = session.id
