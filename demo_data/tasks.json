@@ -1,26 +1,34 @@
 [
     {
-        "id": "1",
-        "title": "CS 3110: Assignment 3 (Functional Interpreter)",
-        "deadline": "2026-07-06T23:59:00.342137",
+        "id": "2",
+        "title": "Updated Urgent Title",
+        "deadline": "2026-07-04T05:38:25.488321",
         "priority": "High",
         "status": "Todo",
-        "description": "Write a parser and interpreter for a subset of OCaml."
-    },
-    {
-        "id": "2",
-        "title": "MATH 2940: Homework 5",
-        "deadline": "2026-07-07T12:00:00.342137",
-        "priority": "Medium",
-        "status": "Todo",
-        "description": "Complete exercises 4.1 to 4.5 in textbook."
+        "description": "Due soon"
     },
     {
         "id": "3",
-        "title": "CS 3110: Midterm Prep Quiz",
-        "deadline": "2026-07-04T23:59:00.342137",
+        "title": "Upcoming Assignment",
+        "deadline": "2026-07-05T11:38:25.488321",
+        "priority": "Low",
+        "status": "Todo",
+        "description": "Due later"
+    },
+    {
+        "id": "4",
+        "title": "Completed Assignment",
+        "deadline": "2026-07-03T19:38:25.488321",
         "priority": "High",
         "status": "Completed",
-        "description": "Online practice quiz covering first 4 modules."
+        "description": "Already done"
+    },
+    {
+        "id": "4",
+        "title": "Thesis presentation prep",
+        "deadline": "2024-07-05T12:00:00",
+        "priority": "Medium",
+        "status": "Todo",
+        "description": ""
     }
 ]

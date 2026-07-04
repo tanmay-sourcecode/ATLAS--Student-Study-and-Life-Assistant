@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": "1",
+        "to": "[Professor Email]",
+        "subject": "Extension Request - Thesis Submission - [Your Name]",
+        "body": "Dear Professor [Professor Name],\n\nI am writing to respectfully request a two-day extension for the upcoming thesis submission deadline. Due to unforeseen circumstances, I would greatly appreciate a short extension to ensure the quality of my work.\n\nThank you for your understanding.\n\nBest regards,\n[Your Name]\n[Your Student ID]",
+        "status": "Pending Approval",
+        "created_at": "2026-07-04T12:35:48.891322"
+    }
+]

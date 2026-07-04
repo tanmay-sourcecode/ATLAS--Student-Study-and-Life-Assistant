@@ -5,6 +5,7 @@ from google.adk.models.lite_llm import LiteLlm
 from orchestrator.prompts import STUDY_SYSTEM_PROMPT
 from rag.ingest import ingest
 from rag.retrieve import retrieve
+from tools import save_qa_pairs, get_qa_pairs, get_skill_instructions, log_study_topic, get_revision_queue, mark_topic_reviewed, get_new_topics_suggestions
 
 def get_model():
     if os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"):
@@ -18,6 +19,6 @@ study_agent = Agent(
     name="Study",
     model=get_model(),
     instruction=STUDY_SYSTEM_PROMPT,
-    description="Summarizes syllabus/lecture materials, generates study plans, and answers study questions grounded in documents (with citations).",
-    tools=[ingest, retrieve]
+    description="Summarizes syllabus/lecture materials, generates study plans, generates active-recall Q&A pairs, runs interactive quizzes, and answers study questions grounded in documents (with citations).",
+    tools=[ingest, retrieve, save_qa_pairs, get_qa_pairs, get_skill_instructions, log_study_topic, get_revision_queue, mark_topic_reviewed, get_new_topics_suggestions]
 )

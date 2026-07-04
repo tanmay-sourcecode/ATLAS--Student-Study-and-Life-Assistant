@@ -3,7 +3,7 @@ from google.adk.agents import Agent
 from google.adk.models.google_llm import Gemini
 from google.adk.models.lite_llm import LiteLlm
 from orchestrator.prompts import COMMS_SYSTEM_PROMPT
-from tools import create_email_draft, get_email_drafts, approve_and_send_email
+from tools import create_email_draft, get_email_drafts, approve_and_send_email, get_skill_instructions
 
 def get_model():
     if os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"):
@@ -18,5 +18,5 @@ comms_agent = Agent(
     model=get_model(),
     instruction=COMMS_SYSTEM_PROMPT,
     description="Drafts respectful academic emails and communications to professors, TAs, or teammates. Requires human-in-the-loop approval.",
-    tools=[create_email_draft, get_email_drafts, approve_and_send_email]
+    tools=[create_email_draft, get_email_drafts, approve_and_send_email, get_skill_instructions]
 )

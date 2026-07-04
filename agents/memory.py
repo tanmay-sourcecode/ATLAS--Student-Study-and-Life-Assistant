@@ -5,6 +5,7 @@ from google.adk.models.google_llm import Gemini
 from google.adk.models.lite_llm import LiteLlm
 from orchestrator.prompts import MEMORY_SYSTEM_PROMPT
 from security.pii import redact_pii
+from tools import get_skill_instructions
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "demo_data")
 MEMORY_FILE = os.path.join(DATA_DIR, "memories.json")
@@ -101,5 +102,5 @@ memory_agent = Agent(
     model=get_model(),
     instruction=MEMORY_SYSTEM_PROMPT,
     description="Manages long-term structured facts and habits of the student. Removes sensitive personal details.",
-    tools=[get_memories, add_memory, delete_memory, export_memories]
+    tools=[get_memories, add_memory, delete_memory, export_memories, get_skill_instructions]
 )
