@@ -1,7 +1,14 @@
 import os
 import sys
 import asyncio
+import logging
+import warnings
 from dotenv import load_dotenv
+
+# Suppress warnings and standard ADK exception stack trace logs
+warnings.simplefilter("ignore", UserWarning)
+logging.getLogger("google_adk").setLevel(logging.CRITICAL)
+logging.getLogger("google_adk").propagate = False
 
 # Ensure dotenv is loaded before initializing agents
 load_dotenv()
@@ -50,7 +57,7 @@ except ImportError:
 
 from orchestrator.agent import orchestrator_agent
 
-BANNER = """
+BANNER = r"""
 ========================================================================
     ___   ______   __       ___    _____
    /   | /_  __/  / /      /   |  / ___/
@@ -65,10 +72,14 @@ BANNER = """
 
 def print_help():
     print("\n[i] Suggested Scenarios:")
-    print("  1. Planning: 'What should I focus on this week?'")
-    print("  2. Study:    'Summarize demo_data/sample_syllabus.txt for exam prep'")
-    print("  3. Email:    'Draft an email to my professor asking for a 2-day extension'")
-    print("  4. Memory:   'Tell me what you know about my study preferences'")
+    print("  1. Planning:   'What should I focus on this week?'")
+    print("  2. Study:      'Summarize demo_data/sample_syllabus.txt for exam prep'")
+    print("  3. Pomodoro:   'Start a 25-minute focus session for task 1'")
+    print("  4. Active Q&A: 'Generate 5 practice questions for CS 3110'")
+    print("  5. Revision:   'What should I revise today?'")
+    print("  6. Tasks:      'Edit task 2 deadline to tomorrow' or 'Do I have urgent deadlines?'")
+    print("  7. Email:      'Draft an email to my professor asking for a 2-day extension'")
+    print("  8. Memory:     'Tell me what you know about my study preferences'")
     print("\nCommands:")
     print("  'help'   - Show this instruction list.")
     print("  'exit'   - Exit the application.")
@@ -108,7 +119,7 @@ async def chat_loop():
                 print_help()
                 continue
                 
-            print("\nAtlas thinking...", end="", flush=True)
+            print("\nAtlas  thinking...", end="", flush=True)
             
             # Construct Content message object
             user_message = types.Content(
@@ -117,7 +128,7 @@ async def chat_loop():
             )
             
             # Print response streaming
-            print("\rAtlas: ", end="", flush=True)
+            print("\rAtlas:", end="", flush=True)
             
             async for event in runner.run_async(
                 user_id=user_id,
@@ -136,7 +147,15 @@ async def chat_loop():
             print("\n\nGoodbye! Stay organized and good luck with your studies!")
             break
         except Exception as e:
-            print(f"\n[ERROR] Error encountered: {str(e)}\n")
+            err_msg = str(e)
+            err_msg_lower = err_msg.lower()
+            if "quota" in err_msg_lower or "limit" in err_msg_lower or "429" in err_msg_lower or "exhausted" in err_msg_lower:
+                print("\n[Status] API quota exceeded or rate limited. Please try again in a few minutes.\n")
+            elif "connection" in err_msg_lower or "timeout" in err_msg_lower or "aborted" in err_msg_lower or isinstance(e, (ConnectionAbortedError, ConnectionError, TimeoutError)):
+                print("\n[Status] Connection aborted or network timeout. Please check your connection.\n")
+            else:
+                clean_err = err_msg.split('\n')[0].strip()
+                print(f"\n[Status] {clean_err}\n")
 
 def main():
     asyncio.run(chat_loop())
