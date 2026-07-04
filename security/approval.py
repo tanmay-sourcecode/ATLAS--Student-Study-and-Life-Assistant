@@ -14,11 +14,11 @@ def request_approval(action_description: str) -> bool:
         user_input = input("Do you approve this action? (yes/no) [no]: ").strip().lower()
         approved = user_input in ["y", "yes"]
         if approved:
-            print("✅ Action approved by student. Executing...\n")
+            print("[OK] Action approved by student. Executing...\n")
             return True
         else:
-            print("❌ Action denied by student. Cancelling...\n")
+            print("[DENIED] Action denied by student. Cancelling...\n")
             return False
     except (KeyboardInterrupt, EOFError):
-        print("\n❌ Input interrupted. Action denied by default.\n")
+        print("\n[DENIED] Input interrupted. Action denied by default.\n")
         return False

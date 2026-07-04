@@ -8,7 +8,7 @@ load_dotenv()
 
 # Check for API keys
 if not os.getenv("ANTHROPIC_API_KEY") and not os.getenv("GEMINI_API_KEY") and not os.getenv("GOOGLE_API_KEY"):
-    print("⚠️ WARNING: No ANTHROPIC_API_KEY or GEMINI_API_KEY/GOOGLE_API_KEY found in environment variables.")
+    print("[!] WARNING: No ANTHROPIC_API_KEY or GEMINI_API_KEY/GOOGLE_API_KEY found in environment variables.")
     print("Please set one of these keys in your .env file or local environment so the LLM can run.\n")
 
 try:
@@ -64,7 +64,7 @@ BANNER = """
 """
 
 def print_help():
-    print("\n💡 Suggested Scenarios:")
+    print("\n[i] Suggested Scenarios:")
     print("  1. Planning: 'What should I focus on this week?'")
     print("  2. Study:    'Summarize demo_data/sample_syllabus.txt for exam prep'")
     print("  3. Email:    'Draft an email to my professor asking for a 2-day extension'")
@@ -96,7 +96,7 @@ async def chat_loop():
     
     while True:
         try:
-            query = input("🎓 Student > ").strip()
+            query = input("Student > ").strip()
             if not query:
                 continue
                 
@@ -108,7 +108,7 @@ async def chat_loop():
                 print_help()
                 continue
                 
-            print("\n🤖 Atlas thinking...", end="", flush=True)
+            print("\nAtlas thinking...", end="", flush=True)
             
             # Construct Content message object
             user_message = types.Content(
@@ -117,7 +117,7 @@ async def chat_loop():
             )
             
             # Print response streaming
-            print("\r🤖 Atlas: ", end="", flush=True)
+            print("\rAtlas: ", end="", flush=True)
             
             async for event in runner.run_async(
                 user_id=user_id,
@@ -136,7 +136,7 @@ async def chat_loop():
             print("\n\nGoodbye! Stay organized and good luck with your studies!")
             break
         except Exception as e:
-            print(f"\n❌ Error encountered: {str(e)}\n")
+            print(f"\n[ERROR] Error encountered: {str(e)}\n")
 
 def main():
     asyncio.run(chat_loop())

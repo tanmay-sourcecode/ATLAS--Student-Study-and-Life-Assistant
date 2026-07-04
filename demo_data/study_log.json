@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "subject": "CS 3110",
+        "topic": "Recursion",
+        "summary": "A function that calls itself to solve smaller subproblems.",
+        "first_studied": "2026-07-04T00:38:25.227819",
+        "last_reviewed": "2026-07-04T00:38:25.391491",
+        "review_count": 3,
+        "next_review_due": "2026-07-14T00:38:25.391491"
+    }
+]

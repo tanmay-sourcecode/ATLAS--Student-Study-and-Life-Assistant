@@ -62,8 +62,8 @@ Atlas is a hierarchical multi-agent system on Google ADK. A central Orchestrator
 | Agent (file) | Responsibility |
 |---|---|
 | Orchestrator (`orchestrator/agent.py`) | Intent classification, routing, reply synthesis, approval gating |
-| Scheduler (`agents/scheduler.py`) | Classes, deadlines, exam dates, study blocks, conflict detection |
-| Study (`agents/study.py`) | RAG summaries, key concepts, study plans, grounded answers w/ citations |
+| Scheduler (`agents/scheduler.py`) | Classes, deadlines, assignments (CRUD), exam dates, study blocks, conflict detection, revision-aware scheduling, and proactive task reminders |
+| Study (`agents/study.py`) | RAG summaries, key concepts, study plans, grounded answers w/ citations, spaced-repetition revision reminders |
 | Comms (`agents/comms.py`) | Drafts academic emails/messages — never sends |
 | Memory (`agents/memory.py`) | Durable student prefs, PII-minimized, separate from session context |
 
@@ -80,6 +80,10 @@ Atlas is a hierarchical multi-agent system on Google ADK. A central Orchestrator
 - **Academic email drafting** with an approval gate.
 - **Long-term memory** for student preferences (PII-safe).
 - **Multi-agent coordination** via clear tool interfaces + a small MCP server.
+- **Pomodoro Focus Timer**: Guides study focus blocks (25-min focus / 5-min breaks), logs completed cycles, and tracks focus statistics.
+- **Active-Recall Q&A Generator**: Generates practice question-and-answer pairs from RAG documents and conducts interactive conversational quizzes.
+- **Smart Revision Reminders**: Tracks studied topics with spaced-repetition scheduling (2 → 5 → 10 → 17 → 24 days), surfaces concise micro-summaries of overdue lessons, and merges new topic suggestions from course files to keep study sessions fresh and non-monotonous.
+- **To-Do List & Task Reminders**: Provides proactive reminders at session start separating tasks into Overdue (🔴), Urgent (🟡), and Upcoming (🟢). Supports complete task modification controls (editing properties, deleting tasks) secured behind approval gates.
 
 ---
 
@@ -121,7 +125,11 @@ atlas-student-chief-of-staff/
 │  ├─ assignment_breakdown/SKILL.md
 │  ├─ email_draft/SKILL.md
 │  ├─ document_summary/SKILL.md
-│  └─ deadline_checkin/SKILL.md
+│  ├─ deadline_checkin/SKILL.md
+│  ├─ pomodoro/SKILL.md      # Pomodoro study cycles and tracking
+│  ├─ qa_generator/SKILL.md  # Active-recall Q&A and interactive quiz
+│  ├─ revision_reminder/SKILL.md  # Spaced-repetition revision reminders
+│  └─ task_reminder/SKILL.md  # Proactive task reminders and task CRUD
 ├─ skills_runtime.py         # loads a skill's SKILL.md on demand
 ├─ tools.py                  # calendar/tasks/files/email stubs
 ├─ mcp/
@@ -196,7 +204,7 @@ A demo mode with sample student data and three scripted scenarios (planning, stu
 
 Skills are reusable procedures built the Anthropic way — each is a folder with a `SKILL.md` (YAML frontmatter: `name`, `description` + markdown instructions). Loading is three-level (**progressive disclosure**): metadata always in context, the SKILL.md body only when the skill triggers, bundled scripts only when needed. This keeps behavior consistent **and** keeps token usage/cost low.
 
-Skills: `daily_brief`, `study_plan`, `assignment_breakdown`, `email_draft`, `document_summary`, `deadline_checkin`.
+Skills: `daily_brief`, `study_plan`, `assignment_breakdown`, `email_draft`, `document_summary`, `deadline_checkin`, `pomodoro`, `qa_generator`, `revision_reminder`, `task_reminder`.
 
 ---
 
@@ -232,6 +240,10 @@ pytest
 - `test_skills.py` — each skill runs
 - `test_rag.py` — grounded answer + citation
 - `test_approval.py` — no external action without confirmation
+- `test_pomodoro.py` — Pomodoro logging and focus history
+- `test_qa_generator.py` — Q&A pair storage and retrieval
+- `test_revision.py` — study log, spaced-repetition intervals, revision queue, new topic suggestions
+- `test_task_reminder.py` — task deletion, edits, and urgency categorization
 
 ---
 

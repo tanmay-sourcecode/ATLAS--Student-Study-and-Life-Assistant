@@ -33,5 +33,680 @@
         "timestamp": "2026-07-03T00:39:10.318142",
         "action_type": "tool_call",
         "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-03T18:28:41.693356",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-03T18:28:41.799034",
+        "action_type": "tool_call",
+        "details": "get_calendar_events invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:33:04.318037",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:33:04.333176",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:33:04.351459",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:33:04.366999",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.768617",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.786737",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.810746",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.832818",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.872250",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.893568",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.917858",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.959861",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:40.978300",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:41:41.001194",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.733600",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.749397",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.775087",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.797248",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.825087",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.846755",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.901387",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.961366",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:35.989513",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:42:36.017787",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.732189",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.751434",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.788915",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.813249",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.839494",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.858884",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.894059",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.947449",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.969401",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-03T23:45:13.990868",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.235781",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.259295",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.283944",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.309159",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.344070",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.365552",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.415046",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.464784",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.487593",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:14:33.512573",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.206771",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.225716",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.253706",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.270265",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.296583",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.319114",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.362601",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.410599",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.435295",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.464141",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.507144",
+        "action_type": "tool_call",
+        "details": "log_study_topic for subject 'CS 3110', topic 'Recursion'"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.563239",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.592860",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.639739",
+        "action_type": "tool_call",
+        "details": "mark_topic_reviewed for ID 1"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.699041",
+        "action_type": "tool_call",
+        "details": "mark_topic_reviewed for ID 1"
+    },
+    {
+        "timestamp": "2026-07-04T00:16:51.751565",
+        "action_type": "tool_call",
+        "details": "get_new_topics_suggestions for subject 'CS 3110'"
+    },
+    {
+        "timestamp": "2026-07-04T00:17:46.005065",
+        "action_type": "tool_call",
+        "details": "log_study_topic for subject 'CS 3110', topic 'Tail Recursion'"
+    },
+    {
+        "timestamp": "2026-07-04T00:18:36.245846",
+        "action_type": "tool_call",
+        "details": "log_study_topic for subject 'CS 3110', topic 'Tail Recursion'"
+    },
+    {
+        "timestamp": "2026-07-04T00:18:59.847181",
+        "action_type": "tool_call",
+        "details": "log_study_topic for subject 'CS 3110', topic 'Tail Recursion'"
+    },
+    {
+        "timestamp": "2026-07-04T00:19:06.150970",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:19:09.345097",
+        "action_type": "tool_call",
+        "details": "get_new_topics_suggestions for subject 'CS 3110'"
+    },
+    {
+        "timestamp": "2026-07-04T00:19:14.886678",
+        "action_type": "tool_call",
+        "details": "mark_topic_reviewed for ID 1"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.257071",
+        "action_type": "tool_call",
+        "details": "get_task_reminders invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.289170",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.313986",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.342164",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.370088",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.398157",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.426900",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.473105",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.506269",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.536499",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:37:46.563093",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.312072",
+        "action_type": "tool_call",
+        "details": "get_task_reminders invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.349951",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.368038",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.386357",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.408645",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.437306",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.461032",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.500692",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.529497",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.550542",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.571211",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.594951",
+        "action_type": "tool_call",
+        "details": "delete_task ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.614745",
+        "action_type": "security_gate",
+        "details": "delete_task ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.640908",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.665767",
+        "action_type": "tool_call",
+        "details": "delete_task ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.689048",
+        "action_type": "security_gate",
+        "details": "delete_task ID 1 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:01.709650",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.826509",
+        "action_type": "tool_call",
+        "details": "add_calendar_event 'CS 3110 Lecture' requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.855310",
+        "action_type": "security_gate",
+        "details": "add_calendar_event 'CS 3110 Lecture' denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.890560",
+        "action_type": "tool_call",
+        "details": "approve_and_send_email ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.923898",
+        "action_type": "security_gate",
+        "details": "approve_and_send_email ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.966186",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:24.996991",
+        "action_type": "tool_call",
+        "details": "log_pomodoro_session for task ID 1 with duration 25m"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.029127",
+        "action_type": "tool_call",
+        "details": "get_pomodoro_history invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.096834",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.133387",
+        "action_type": "tool_call",
+        "details": "save_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.168128",
+        "action_type": "tool_call",
+        "details": "get_qa_pairs for subject 'Linear Algebra'"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.220798",
+        "action_type": "tool_call",
+        "details": "log_study_topic for subject 'CS 3110', topic 'Recursion'"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.276288",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.300326",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.337172",
+        "action_type": "tool_call",
+        "details": "mark_topic_reviewed for ID 1"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.385428",
+        "action_type": "tool_call",
+        "details": "mark_topic_reviewed for ID 1"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.437122",
+        "action_type": "tool_call",
+        "details": "get_new_topics_suggestions for subject 'CS 3110'"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.526086",
+        "action_type": "tool_call",
+        "details": "get_task_reminders invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.572360",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.600148",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.629117",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.655911",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.682567",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.707122",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.751510",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.783412",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.804572",
+        "action_type": "tool_call",
+        "details": "edit_task ID 2 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.827525",
+        "action_type": "security_gate",
+        "details": "edit_task ID 2 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.849332",
+        "action_type": "tool_call",
+        "details": "delete_task ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.867282",
+        "action_type": "security_gate",
+        "details": "delete_task ID 1 denied by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.887279",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.907502",
+        "action_type": "tool_call",
+        "details": "delete_task ID 1 requested"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.928479",
+        "action_type": "security_gate",
+        "details": "delete_task ID 1 approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T00:38:25.947352",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T12:35:46.660644",
+        "action_type": "tool_call",
+        "details": "get_skill_instructions for skill 'email_draft'"
+    },
+    {
+        "timestamp": "2026-07-04T12:35:48.885057",
+        "action_type": "tool_call",
+        "details": "create_email_draft to '[Professor Email]' with subject 'Extension Request - Thesis Submission - [Your Name]'"
+    },
+    {
+        "timestamp": "2026-07-04T12:43:13.945806",
+        "action_type": "tool_call",
+        "details": "read_document_content for demo_data/sample_syllabus.txt"
+    },
+    {
+        "timestamp": "2026-07-04T12:43:52.287234",
+        "action_type": "tool_call",
+        "details": "get_skill_instructions for skill 'assignment_breakdown'"
+    },
+    {
+        "timestamp": "2026-07-04T12:47:44.042231",
+        "action_type": "tool_call",
+        "details": "add_task 'Thesis presentation prep' requested"
+    },
+    {
+        "timestamp": "2026-07-04T12:48:07.230543",
+        "action_type": "security_gate",
+        "details": "add_task 'Thesis presentation prep' approved by user"
     }
 ]

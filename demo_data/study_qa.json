@@ -1,0 +1,12 @@
+{
+    "Linear Algebra": [
+        {
+            "question": "What is an eigenvalue?",
+            "answer": "A scalar lambda associated with a linear transformation."
+        },
+        {
+            "question": "What is a vector space?",
+            "answer": "A collection of vectors that satisfies eight axioms."
+        }
+    ]
+}
