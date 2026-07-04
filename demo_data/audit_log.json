@@ -708,5 +708,20 @@
         "timestamp": "2026-07-04T12:48:07.230543",
         "action_type": "security_gate",
         "details": "add_task 'Thesis presentation prep' approved by user"
+    },
+    {
+        "timestamp": "2026-07-04T21:27:48.398444",
+        "action_type": "tool_call",
+        "details": "get_tasks invoked"
+    },
+    {
+        "timestamp": "2026-07-04T21:27:48.400882",
+        "action_type": "tool_call",
+        "details": "get_revision_queue invoked"
+    },
+    {
+        "timestamp": "2026-07-04T21:27:48.402643",
+        "action_type": "tool_call",
+        "details": "get_task_reminders invoked"
     }
 ]
