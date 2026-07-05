@@ -1,5 +1,26 @@
-.env
+
 Atlas_Antigravity_Prompts.md
 Atlas_Design_and_Plan.md
 Atlas_Step_by_Step.md
-.venv
+
+# Secrets — NEVER commit
+.env
+*.key
+credentials.json      # Google OAuth client secret
+token.json            # Google OAuth token
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Atlas runtime
+audit.log
+.atlas_memory.json
+rag/_index.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -16,4 +16,11 @@ mcp
 pytest
 pydantic
 
-dotenv
+litellm                       # lets ADK call Claude via the Anthropic API
+python-dotenv                 # loads secrets from .env (keys never hardcoded)
+
+# MCP tool integrations (Maps / Calendar / Gmail)
+requests                      # Google Maps HTTP calls
+google-api-python-client      # Google Calendar + Gmail
+google-auth                   # loads the saved OAuth token
+google-auth-oauthlib          # one-time OAuth flow (scripts/google_oauth_setup.py)
