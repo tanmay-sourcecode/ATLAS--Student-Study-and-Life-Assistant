@@ -16,6 +16,12 @@ mcp
 pytest
 pydantic
 
+dotenv
+
+# Web Application
+fastapi
+uvicorn[standard]
+python-multipart
 litellm                       # lets ADK call Claude via the Anthropic API
 python-dotenv                 # loads secrets from .env (keys never hardcoded)
 
