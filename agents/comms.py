@@ -4,7 +4,10 @@ from google.adk.models.google_llm import Gemini
 from google.adk.models.lite_llm import LiteLlm
 from orchestrator.prompts import COMMS_SYSTEM_PROMPT
 from tools import create_email_draft, get_email_drafts, approve_and_send_email, get_skill_instructions
-# Gmail tools (auto-invoked in the terminal chat based on their docstrings)
+# NEW: Google Gmail tools. Standalone module at project root (google_tools.py) so it
+# can't clash with the installed `mcp` package. The agent calls these on its own,
+# based on their docstrings — gmail_search when the student asks about a received
+# email, gmail_create_draft when they want to write one (draft only, never sends).
 from google_tools import gmail_search, gmail_create_draft
 
 def get_model():
