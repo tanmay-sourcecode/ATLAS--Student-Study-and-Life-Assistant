@@ -17,3 +17,8 @@ pytest
 pydantic
 
 dotenv
+
+# Web Application
+fastapi
+uvicorn[standard]
+python-multipart

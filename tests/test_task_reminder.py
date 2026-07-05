@@ -1,5 +1,6 @@
 import os
 import json
+import asyncio
 from datetime import datetime, timedelta
 import pytest
 from unittest.mock import patch
@@ -82,7 +83,7 @@ def test_task_reminder_system():
     
     # 2. Test edit_task (Approval Denied)
     with patch('builtins.input', return_value='no'):
-        res = edit_task("2", title="New Title")
+        res = asyncio.run(edit_task("2", title="New Title"))
         assert "Error: Action denied by user." in res
         
         # Verify no change occurred
@@ -93,7 +94,7 @@ def test_task_reminder_system():
         
     # 3. Test edit_task (Approval Approved)
     with patch('builtins.input', return_value='yes'):
-        res = edit_task("2", title="Updated Urgent Title", priority="High")
+        res = asyncio.run(edit_task("2", title="Updated Urgent Title", priority="High"))
         assert "Successfully updated task ID 2" in res
         
         # Verify change occurred
@@ -106,16 +107,16 @@ def test_task_reminder_system():
     # 4. Test edit_task validations
     with patch('builtins.input', return_value='yes'):
         # Invalid priority
-        res = edit_task("2", priority="Urgent")
+        res = asyncio.run(edit_task("2", priority="Urgent"))
         assert "Error: priority must be one of" in res
         
         # Invalid deadline format
-        res = edit_task("2", deadline="invalid-date")
+        res = asyncio.run(edit_task("2", deadline="invalid-date"))
         assert "Error: deadline must be in ISO 8601 format" in res
         
     # 5. Test delete_task (Approval Denied)
     with patch('builtins.input', return_value='no'):
-        res = delete_task("1")
+        res = asyncio.run(delete_task("1"))
         assert "Error: Action denied by user." in res
         
         # Verify task is still present
@@ -126,7 +127,7 @@ def test_task_reminder_system():
         
     # 6. Test delete_task (Approval Approved)
     with patch('builtins.input', return_value='yes'):
-        res = delete_task("1")
+        res = asyncio.run(delete_task("1"))
         assert "Successfully deleted task ID 1" in res
         
         # Verify task is removed

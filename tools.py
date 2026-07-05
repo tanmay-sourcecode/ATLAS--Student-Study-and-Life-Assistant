@@ -103,13 +103,13 @@ def get_calendar_events() -> str:
     except Exception as e:
         return f"Error retrieving calendar events: {str(e)}"
 
-def add_calendar_event(title: str, start_time: str, end_time: str, description: str = "") -> str:
+async def add_calendar_event(title: str, start_time: str, end_time: str, description: str = "") -> str:
     """Schedules a new calendar event. Required format for start_time and end_time: YYYY-MM-DDTHH:MM:SS"""
     log_action("tool_call", f"add_calendar_event '{title}' requested")
     
     # Gate: Human in the loop approval
     approval_desc = f"Schedule a calendar event: '{title}' from {start_time} to {end_time}"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"add_calendar_event '{title}' denied by user")
         return "Error: Action denied by user."
         
@@ -152,13 +152,13 @@ def get_tasks() -> str:
     except Exception as e:
         return f"Error retrieving tasks: {str(e)}"
 
-def add_task(title: str, deadline: str, priority: str = "Medium", description: str = "") -> str:
+async def add_task(title: str, deadline: str, priority: str = "Medium", description: str = "") -> str:
     """Adds a new task or assignment with a deadline. Required deadline format: YYYY-MM-DDTHH:MM:SS"""
     log_action("tool_call", f"add_task '{title}' requested")
     
     # Gate: Human in the loop approval
     approval_desc = f"Create a task: '{title}' with deadline {deadline}"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"add_task '{title}' denied by user")
         return "Error: Action denied by user."
         
@@ -190,13 +190,13 @@ def add_task(title: str, deadline: str, priority: str = "Medium", description: s
     except Exception as e:
         return f"Error adding task: {str(e)}"
 
-def update_task_status(task_id: str, status: str) -> str:
+async def update_task_status(task_id: str, status: str) -> str:
     """Updates the status of a specific task. status must be either 'Todo' or 'Completed'."""
     log_action("tool_call", f"update_task_status ID {task_id} to '{status}' requested")
     
     # Gate: Human in the loop approval
     approval_desc = f"Update status of task ID {task_id} to '{status}'"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"update_task_status ID {task_id} denied by user")
         return "Error: Action denied by user."
         
@@ -225,13 +225,13 @@ def update_task_status(task_id: str, status: str) -> str:
     except Exception as e:
         return f"Error updating task status: {str(e)}"
 
-def delete_task(task_id: str) -> str:
+async def delete_task(task_id: str) -> str:
     """Deletes a specific task. Requires human-in-the-loop approval."""
     log_action("tool_call", f"delete_task ID {task_id} requested")
     
     # Gate: Human in the loop approval
     approval_desc = f"Delete task ID {task_id}"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"delete_task ID {task_id} denied by user")
         return "Error: Action denied by user."
         
@@ -259,7 +259,7 @@ def delete_task(task_id: str) -> str:
     except Exception as e:
         return f"Error deleting task: {str(e)}"
 
-def edit_task(task_id: str, title: str = None, deadline: str = None, priority: str = None, description: str = None) -> str:
+async def edit_task(task_id: str, title: str = None, deadline: str = None, priority: str = None, description: str = None) -> str:
     """Edits individual fields of an existing task. Requires human-in-the-loop approval."""
     log_action("tool_call", f"edit_task ID {task_id} requested")
     
@@ -274,7 +274,7 @@ def edit_task(task_id: str, title: str = None, deadline: str = None, priority: s
         return "Error: No updates specified."
         
     approval_desc = f"Edit task ID {task_id}: {', '.join(updates)}"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"edit_task ID {task_id} denied by user")
         return "Error: Action denied by user."
         
@@ -390,13 +390,13 @@ def create_email_draft(to_email: str, subject: str, body: str) -> str:
     except Exception as e:
         return f"Error creating email draft: {str(e)}"
 
-def approve_and_send_email(draft_id: str) -> str:
+async def approve_and_send_email(draft_id: str) -> str:
     """Approves a pending draft and simulates sending it out."""
     log_action("tool_call", f"approve_and_send_email ID {draft_id} requested")
     
     # Gate: Human in the loop approval
     approval_desc = f"Approve and SEND email draft ID {draft_id}"
-    if not request_approval(approval_desc):
+    if not await request_approval(approval_desc):
         log_action("security_gate", f"approve_and_send_email ID {draft_id} denied by user")
         return "Error: Action denied by user."
         
