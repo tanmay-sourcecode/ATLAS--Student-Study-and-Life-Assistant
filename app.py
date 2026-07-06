@@ -158,7 +158,12 @@ async def chat_loop():
                 print(f"\n[Status] {clean_err}\n")
 
 def main():
-    asyncio.run(chat_loop())
+    if "--web" in sys.argv:
+        print("[i] Starting Atlas Web Server on http://127.0.0.1:8000 ...")
+        import uvicorn
+        uvicorn.run("web.server:app", host="127.0.0.1", port=8000, log_level="info")
+    else:
+        asyncio.run(chat_loop())
 
 if __name__ == "__main__":
     main()

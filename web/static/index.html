@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas — Your AI Student Chief of Staff</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Panel -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Command Center</h2>
+            </div>
+            
+            <!-- Pomodoro Timer Widget -->
+            <div class="widget glass-panel pomodoro-widget">
+                <h3><i class="fa-solid fa-business-time"></i> Focus Session</h3>
+                <div class="timer-display-container">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring__circle-bg" stroke="#1f2937" stroke-width="6" fill="transparent" r="50" cx="60" cy="60"/>
+                        <circle class="progress-ring__circle" stroke="url(#gradient)" stroke-width="6" fill="transparent" r="50" cx="60" cy="60"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#8b5cf6" />
+                                <stop offset="100%" stop-color="#06b6d4" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="timer-text" id="pomodoro-time">25:00</div>
+                </div>
+                <div class="timer-controls">
+                    <button id="timer-toggle-btn" class="btn btn-primary btn-sm" style="flex: 1;"><i class="fa-solid fa-play"></i> Start</button>
+                    <button id="timer-reset-btn" class="btn btn-secondary btn-sm"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                </div>
+            </div>
+
+            <!-- Task Board -->
+            <div class="widget glass-panel task-widget">
+                <h3><i class="fa-solid fa-list-check"></i> Task Status</h3>
+                <div class="task-sections">
+                    <div class="task-section overdue">
+                        <h4><span class="dot red"></span> Overdue</h4>
+                        <ul id="tasks-overdue" class="task-list">
+                            <li class="empty-state">No overdue tasks</li>
+                        </ul>
+                    </div>
+                    <div class="task-section urgent">
+                        <h4><span class="dot yellow"></span> Urgent (24h)</h4>
+                        <ul id="tasks-urgent" class="task-list">
+                            <li class="empty-state">No urgent tasks</li>
+                        </ul>
+                    </div>
+                    <div class="task-section upcoming">
+                        <h4><span class="dot green"></span> Upcoming (48h)</h4>
+                        <ul id="tasks-upcoming" class="task-list">
+                            <li class="empty-state">No upcoming tasks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Widget -->
+            <div class="widget glass-panel calendar-widget">
+                <h3><i class="fa-solid fa-calendar-days"></i> Academic Schedule</h3>
+                <ul id="calendar-events" class="event-list">
+                    <li class="empty-state">No events scheduled</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container glass-panel">
+            <header class="chat-header">
+                <div class="logo-area">
+                    <div class="logo-icon">A</div>
+                    <div>
+                        <h1>Atlas</h1>
+                        <p>Your AI Student Chief of Staff</p>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <span id="connection-dot" class="dot gray"></span>
+                    <span id="connection-status">Connecting...</span>
+                </div>
+            </header>
+
+            <!-- Message Area -->
+            <div class="messages-container" id="messages-container">
+                <div class="message assistant">
+                    <div class="message-content">
+                        Hello! I am **Atlas**, your AI Chief of Staff. I can help you coordinate study blocks, check deadline alerts, run quizzes, and plan your Pomodoro timer focus blocks.
+                        
+                        What are we focusing on today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dropzone Overlay for File Upload -->
+            <div class="file-dropzone" id="file-dropzone">
+                <div class="dropzone-content">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Drag & Drop files here to ingest into vector store</p>
+                    <span>Supports PDF, TXT, JSON</span>
+                </div>
+            </div>
+
+            <!-- Chat Footer Input -->
+            <footer class="chat-input-area">
+                <!-- Suggested action chips -->
+                <div class="quick-actions">
+                    <button class="chip" data-query="What should I focus on this week?"><i class="fa-solid fa-lightbulb"></i> Daily Plan</button>
+                    <button class="chip" data-query="What should I revise today?"><i class="fa-solid fa-rotate"></i> Revision Queue</button>
+                    <button class="chip" data-query="Do I have any urgent deadlines?"><i class="fa-solid fa-circle-exclamation"></i> Deadline Alerts</button>
+                    <button class="chip" data-query="Generate 5 practice questions for CS 3110"><i class="fa-solid fa-graduation-cap"></i> Practice Quiz</button>
+                </div>
+                
+                <form id="chat-form" class="input-form">
+                    <div class="input-wrapper">
+                        <textarea id="chat-input" placeholder="Ask Atlas something... (Shift+Enter for new line)" rows="1"></textarea>
+                        <div class="action-buttons">
+                            <label for="file-upload" class="icon-btn" title="Ingest Course Document">
+                                <i class="fa-solid fa-paperclip"></i>
+                            </label>
+                            <input type="file" id="file-upload" accept=".pdf,.txt,.json" style="display: none;">
+                            <button type="submit" id="send-btn" class="send-btn">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Human in the Loop Approval Modal -->
+    <div class="modal-overlay" id="approval-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Approval Required</h3>
+            </div>
+            <div class="modal-body">
+                <p>A sensitive action has been requested by the agent:</p>
+                <div class="action-card" id="approval-description">
+                    Schedule a calendar event: CS 3110 Lecture
+                </div>
+                <p class="warning-note"><i class="fa-solid fa-triangle-exclamation"></i> This action will modify your student record/data.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-deny" class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Deny Action</button>
+                <button id="btn-approve" class="btn btn-success"><i class="fa-solid fa-check"></i> Approve Action</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Ingestion Status -->
+    <div class="toast" id="toast-notification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">File uploaded successfully!</span>
+    </div>
+</body>
+</html>
